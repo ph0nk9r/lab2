@@ -60,8 +60,7 @@ def search_ipv6_in_text(list_of_word: list) -> list:
     if not isinstance(list_of_word, list):
         raise MyTypeError("list_of_word", list_of_word)
     
-    redex = r"\b(?:[0-9a-fA-F]{1,4}:){1,7}[0-9a-fA-F]{1,4}\b"
-    
+    redex = r"[0-9a-f]{0,4}(?:[:.][0-9a-f]{0,4}){7}"
     tandem = []
     for i in list_of_word:
 
